@@ -24,6 +24,10 @@ No hay suite de tests configurada todavía.
 - Estilos con Tailwind CSS v4 vía `@tailwindcss/postcss` (`postcss.config.mjs`); sin `tailwind.config` (config por defecto de v4).
 - `app/layout.tsx` y `app/page.tsx` son los únicos archivos de la app por ahora — no hay rutas, componentes ni lógica de negocio adicionales aún.
 
+## Skills
+
+Usa siempre el /frontend-design para diseñar la interfaz de usuario.
+
 ## Important: unfamiliar Next.js version
 
 Este repo usa Next.js 16, que introduce cambios que rompen compatibilidad respecto a versiones anteriores más comunes en datos de entrenamiento. Antes de escribir código relacionado con routing, data fetching, server actions, config, etc., consulta la documentación local en `node_modules/next/dist/docs/` (carpetas `01-app`, `02-pages`, `03-architecture`) en vez de asumir comportamiento de versiones previas.
