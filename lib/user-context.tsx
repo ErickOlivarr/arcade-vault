@@ -18,8 +18,10 @@ export function UserProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
+    // Lectura de localStorage pospuesta al montaje para no romper la hidratación SSR.
     try {
       const stored = JSON.parse(localStorage.getItem("av_user") || "null");
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setUser(stored);
     } catch {
       setUser(null);
