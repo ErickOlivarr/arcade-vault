@@ -4,6 +4,15 @@
 **Depende de:** SPEC 01
 **Fecha:** 2026-09-04
 
+**Progreso de implementación (en pausa para revisión — ver nota al final del Paso 5):**
+- ✅ Paso 1 (CSS de Home) — hecho, incluye también el CSS de "actividad en vivo" y "precios/FAQ" que faltaba en la lista original de selectores (ver nota más abajo).
+- ✅ Paso 2 (Componente `Home.tsx`) — hecho.
+- ✅ Paso 3 (mover Biblioteca a `/juegos`) — hecho.
+- ✅ Paso 4 (Nav) — hecho.
+- ⚠️ Paso 5 (enlaces internos) — parcialmente hecho: `GameDetail.tsx`, `HallOfFame.tsx`, `Auth.tsx` (ambos redirects) y el botón "VOLVER AL VAULT" del modal de fin de juego en `GamePlayer.tsx` (no listado originalmente en este paso, agregado por decisión explícita) ya apuntan a `/juegos`. El botón "SALIR" del HUD en `GamePlayer.tsx` **no** se tocó — ver nota abajo, el criterio de aceptación que lo menciona está mal.
+- ⬜ Paso 6 (verificación final) — pendiente.
+- Todos los cambios de código están hechos en la rama `spec-02-home-page` pero sin commitear.
+
 **Objetivo:** Implementar la landing page (`home.jsx` del prototipo en `references/templates/home-about/`) como la nueva ruta raíz `/`, moviendo la Biblioteca actual a `/juegos` y actualizando el nav y los enlaces internos en consecuencia.
 
 ## Alcance
@@ -45,6 +54,8 @@ No se introduce ningún dato nuevo. La sección "juegos disponibles ahora" reuti
    - *Prueba:* en `/`, el nav resalta "Inicio"; en `/juegos`, `/juego/<id>` y `/juego/<id>/jugar`, el nav resalta "Biblioteca"; el menú móvil (<840px) muestra "Inicio" y "Biblioteca" apuntando a las rutas correctas.
 5. **Actualizar enlaces internos que asumían `/` = Biblioteca:** cambiar a `/juegos` en `components/GameDetail.tsx` (botón "VOLVER AL VAULT"), `components/HallOfFame.tsx` (botón "volver a biblioteca"), `components/GamePlayer.tsx` (botón "SALIR" — `router.push`), y `components/Auth.tsx` (`router.push` tras enviar el formulario y tras "Jugar como invitado").
    - *Prueba:* desde `/juego/<id>`, "VOLVER AL VAULT" navega a `/juegos`; desde `/salon-de-la-fama`, "volver a biblioteca" navega a `/juegos`; desde el reproductor, "SALIR" navega a `/juegos`; en `/iniciar-sesion`, enviar el formulario y "Jugar como invitado" navegan a `/juegos`.
+   - **⚠️ ERROR DETECTADO (2026-09-04) — pendiente de corrección:** el botón "SALIR" del HUD en `GamePlayer.tsx` **nunca apuntó a `/`**; siempre navegó a `/juego/${game.id}` (la ficha del juego), un comportamiento sin relación con "`/` = Biblioteca". Este mismo comportamiento está validado como correcto en `specs/01-mvp-pantallas.md` (Estado: Implementado), criterio: `"SALIR" desde el reproductor vuelve a /juego/[id]`. Este paso 5 y el criterio de aceptación correspondiente (más abajo) asumen incorrectamente que "SALIR" debía cambiar a `/juegos`. **Al refinar la spec con `/spec`, corregir:** quitar "SALIR" de este paso 5, y corregir el criterio de aceptación que lo menciona para que refleje que sigue yendo a `/juego/[id]` (sin cambios).
+   - **Nota adicional:** el CSS necesario para las secciones "actividad en vivo" y "precios/FAQ" (clases `.activity-grid`, `.ac-head`, `.tick-row`, `.top-row`, `.pricing-grid`, `.price-card`, `.faq-item`, etc., de `references/templates/home-about/styles.css` líneas ~1621-1725) no estaba en la lista de selectores del Paso 1 pese a ser requerido por el Alcance y el criterio de paridad visual. Ya se agregó como parte del Paso 1. Al refinar la spec, considerar mover esa lista de clases al Paso 1 para que quede completa.
 6. **Verificación final:** `npm run lint` y `npm run build` sin errores; recorrido manual de `/` y `/juegos` en `npm run dev` (desktop y ancho móvil) comparando `/` visualmente contra `home.jsx`/`styles.css` de `references/templates/home-about/`.
    - *Prueba:* `npm run lint` y `npm run build` terminan en verde; `/` se ve visualmente equivalente al prototipo Home en desktop y en un viewport móvil (DevTools responsive); todas las rutas existentes de la spec 01 siguen funcionando desde sus nuevas ubicaciones.
 
