@@ -1,6 +1,6 @@
 # 02 — Home page
 
-**Estado:** Aprobado
+**Estado:** Implementado
 **Depende de:** SPEC 01
 **Fecha:** 2026-09-04
 
@@ -51,18 +51,18 @@ No se introduce ningún dato nuevo. La sección "juegos disponibles ahora" reuti
 
 ## Criterios de aceptación
 
-- [ ] `npm run build` compila sin errores de TypeScript ni de ESLint.
-- [ ] `/` muestra la landing (hero con siluetas flotantes y CTAs, sección "por qué Arcade Vault" con 4 features, rail de 6 juegos, 3 bloques de stats, actividad en vivo con ticker y top 5, precios con FAQ, CTA final) con la animación de aparición al hacer scroll.
-- [ ] En el hero de `/`, "EXPLORAR JUEGOS" navega a `/juegos` y "CREAR CUENTA" navega a `/iniciar-sesion`.
-- [ ] Click en una tarjeta del rail de juegos navega a `/juego/[id]` correcto; "VER TODOS LOS JUEGOS →" navega a `/juegos`.
-- [ ] "VER SALÓN →" en la tarjeta de top jugadores navega a `/salon-de-la-fama`; "EMPEZAR GRATIS →" e "INSERTAR MONEDA →" navegan a `/iniciar-sesion` y `/juegos` respectivamente (igual que el prototipo: precio → auth, CTA final → biblioteca).
-- [ ] `/juegos` muestra la Biblioteca completa (buscador, chips de categoría, grid de 8 juegos, estado "NO HAY RESULTADOS"), idéntica a la que antes vivía en `/`.
-- [ ] El nav muestra "Inicio" y "Biblioteca"; "Inicio" resalta solo en `/`; "Biblioteca" resalta en `/juegos`, `/juego/[id]` y `/juego/[id]/jugar`. El link "Acerca de" no está presente todavía.
-- [ ] "VOLVER AL VAULT" en detalle de juego, "volver a biblioteca" en salón de la fama y "VOLVER AL VAULT" en el modal de fin de juego del reproductor navegan a `/juegos`.
-- [ ] "SALIR" en el HUD del reproductor sigue navegando a `/juego/[id]` (sin cambios respecto a la spec 01).
-- [ ] En `/iniciar-sesion`, enviar el formulario y "Jugar como invitado" navegan a `/juegos` (en vez de `/`).
-- [ ] El menú móvil (hamburguesa, <840px) incluye "Inicio" y "Biblioteca" apuntando a las rutas correctas.
-- [ ] La apariencia visual de `/` (tipografías pixel/mono, gradientes de título, siluetas flotantes, efectos neón, animaciones) coincide con `home.jsx`/`styles.css` de `references/templates/home-about/` en desktop y en móvil.
+- [x] `npm run build` compila sin errores de TypeScript ni de ESLint.
+- [x] `/` muestra la landing (hero con siluetas flotantes y CTAs, sección "por qué Arcade Vault" con 4 features, rail de 6 juegos, 3 bloques de stats, actividad en vivo con ticker y top 5, precios con FAQ, CTA final) con la animación de aparición al hacer scroll.
+- [x] En el hero de `/`, "EXPLORAR JUEGOS" navega a `/juegos` y "CREAR CUENTA" navega a `/iniciar-sesion`.
+- [x] Click en una tarjeta del rail de juegos navega a `/juego/[id]` correcto; "VER TODOS LOS JUEGOS →" navega a `/juegos`.
+- [x] "VER SALÓN →" en la tarjeta de top jugadores navega a `/salon-de-la-fama`; "EMPEZAR GRATIS →" e "INSERTAR MONEDA →" navegan a `/iniciar-sesion` y `/juegos` respectivamente (igual que el prototipo: precio → auth, CTA final → biblioteca).
+- [x] `/juegos` muestra la Biblioteca completa (buscador, chips de categoría, grid de 8 juegos, estado "NO HAY RESULTADOS"), idéntica a la que antes vivía en `/`.
+- [x] El nav muestra "Inicio" y "Biblioteca"; "Inicio" resalta solo en `/`; "Biblioteca" resalta en `/juegos`, `/juego/[id]` y `/juego/[id]/jugar`. El link "Acerca de" no está presente todavía.
+- [x] "VOLVER AL VAULT" en detalle de juego, "volver a biblioteca" en salón de la fama y "VOLVER AL VAULT" en el modal de fin de juego del reproductor navegan a `/juegos`.
+- [x] "SALIR" en el HUD del reproductor sigue navegando a `/juego/[id]` (sin cambios respecto a la spec 01).
+- [x] En `/iniciar-sesion`, enviar el formulario y "Jugar como invitado" navegan a `/juegos` (en vez de `/`).
+- [x] El menú móvil (hamburguesa, <840px) incluye "Inicio" y "Biblioteca" apuntando a las rutas correctas.
+- [x] La apariencia visual de `/` (tipografías pixel/mono, gradientes de título, siluetas flotantes, efectos neón, animaciones) coincide con `home.jsx`/`styles.css` de `references/templates/home-about/` en desktop y en móvil.
 
 ## Decisiones tomadas y descartadas
 
