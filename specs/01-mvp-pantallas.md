@@ -1,6 +1,6 @@
 # 01 — MVP: pantallas visuales de Arcade Vault
 
-**Estado:** Aprobado
+**Estado:** Implementado
 **Depende de:** Ninguno
 **Fecha:** 2026-09-03
 
@@ -98,20 +98,20 @@ export function saveScore(entry: ScoreEntry): void;
 
 ## Criterios de aceptación
 
-- [ ] `npm run build` compila sin errores de TypeScript ni de ESLint.
-- [ ] `/` muestra el grid de 8 juegos, el buscador filtra por título en tiempo real y los chips filtran por categoría; buscar algo inexistente muestra el estado "NO HAY RESULTADOS".
-- [ ] Click en una tarjeta o en "JUGAR" navega a `/juego/[id]` con la información correcta del juego (portada, descripción, tags, stats, leaderboard de 10 filas).
-- [ ] `/juego/[id]` con un id inexistente muestra la página 404 de Next.js.
-- [ ] "JUGAR AHORA" navega a `/juego/[id]/jugar`, donde el HUD muestra puntuación subiendo automáticamente, el botón de pausa detiene/reanuda el incremento, y "FIN" abre el modal de fin de partida con la puntuación final.
-- [ ] Guardar la puntuación en el modal la persiste en `localStorage["av_scores"]` y muestra el mensaje de confirmación con efecto de máquina de escribir.
-- [ ] "SALIR" desde el reproductor vuelve a `/juego/[id]`.
-- [ ] `/iniciar-sesion` permite alternar entre "Iniciar sesión" y "Crear cuenta", enviar el formulario con cualquier dato inicia sesión y redirige a `/`, y "Jugar como invitado" navega a `/` sin usuario.
-- [ ] Tras iniciar sesión, el nav (visible en cualquier ruta) muestra el nombre de usuario en vez del botón "Iniciar Sesión", y persiste tras recargar la página (por `localStorage`).
-- [ ] Cerrar sesión desde el nav limpia `localStorage["av_user"]` y vuelve a mostrar "Iniciar Sesión".
-- [ ] `/salon-de-la-fama` muestra podio (top 3) y tabla por cada juego seleccionable en las pestañas; con sesión iniciada aparece la fila "tu mejor marca".
-- [ ] El nav resalta el link activo correctamente en las 5 rutas (incluyendo detalle/reproductor resaltando "Biblioteca").
-- [ ] El menú móvil (hamburguesa) abre/cierra el panel lateral por debajo de 840px de ancho y permite navegar a las mismas rutas.
-- [ ] La apariencia visual (colores, tipografías pixel/mono, efectos neón, scanlines, CRT) coincide con `references/templates/Arcade Vault.html` en desktop y en móvil.
+- [x] `npm run build` compila sin errores de TypeScript ni de ESLint.
+- [x] `/` muestra el grid de 8 juegos, el buscador filtra por título en tiempo real y los chips filtran por categoría; buscar algo inexistente muestra el estado "NO HAY RESULTADOS".
+- [x] Click en una tarjeta o en "JUGAR" navega a `/juego/[id]` con la información correcta del juego (portada, descripción, tags, stats, leaderboard de 10 filas).
+- [x] `/juego/[id]` con un id inexistente muestra la página 404 de Next.js.
+- [x] "JUGAR AHORA" navega a `/juego/[id]/jugar`, donde el HUD muestra puntuación subiendo automáticamente, el botón de pausa detiene/reanuda el incremento, y "FIN" abre el modal de fin de partida con la puntuación final.
+- [x] Guardar la puntuación en el modal la persiste en `localStorage["av_scores"]` y muestra el mensaje de confirmación con efecto de máquina de escribir.
+- [x] "SALIR" desde el reproductor vuelve a `/juego/[id]`.
+- [x] `/iniciar-sesion` permite alternar entre "Iniciar sesión" y "Crear cuenta", enviar el formulario con cualquier dato inicia sesión y redirige a `/`, y "Jugar como invitado" navega a `/` sin usuario.
+- [x] Tras iniciar sesión, el nav (visible en cualquier ruta) muestra el nombre de usuario en vez del botón "Iniciar Sesión", y persiste tras recargar la página (por `localStorage`).
+- [x] Cerrar sesión desde el nav limpia `localStorage["av_user"]` y vuelve a mostrar "Iniciar Sesión".
+- [x] `/salon-de-la-fama` muestra podio (top 3) y tabla por cada juego seleccionable en las pestañas; con sesión iniciada aparece la fila "tu mejor marca".
+- [x] El nav resalta el link activo correctamente en las 5 rutas (incluyendo detalle/reproductor resaltando "Biblioteca").
+- [x] El menú móvil (hamburguesa) abre/cierra el panel lateral por debajo de 840px de ancho y permite navegar a las mismas rutas.
+- [x] La apariencia visual (colores, tipografías pixel/mono, efectos neón, scanlines, CRT) coincide con `references/templates/Arcade Vault.html` en desktop y en móvil.
 
 ## Decisiones tomadas y descartadas
 
